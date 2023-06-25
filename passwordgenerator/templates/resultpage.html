@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block static %}
+    {% static "resultpagestyle.css" %}
+{% endblock %}
+{% block title %}
+    result
+{% endblock %}
+{% block content %}
+    <h1>your password : {{ password }}</h1>
+
+{% endblock %}

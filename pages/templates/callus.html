@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+{% block static %}
+    <link rel="stylesheet" href="{% static "callus.css" %}">
+{% endblock %}
+{% block title %}
+contact us
+{% endblock %}
+{% block content%}
+{#    this form get a data from the contacts and we will answer them via email and contact will redirect to page that we will say we will contact you via email so check it#}
+<div class="container">
+		<h1>Contact Us</h1>
+		<form  action="{% url "callus" %}" , method="post" , name="contact-us-form">
+            {% csrf_token %}
+
+            {{form}}
+
+
+
+{##}
+{#            <label>name</label>#}
+{#            <input type="text" required name="name" class="inputs">#}
+{##}
+{#			<label>Email:</label>#}
+{#			<input class="inputs" type="email" name="email" required>#}
+{##}
+{#			<label>Message:</label>#}
+{#			<textarea  name="message" required></textarea>#}
+
+			<button  type="submit" name="submit"  class="inputs"> submit</button>
+		</form>
+	</div>
+                <h2 class="make-phone-call" >if you want to make a call please click on this <a href="tel:09033622887">call</a></h2>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,9 @@
+<div>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "homepage.css" %}">
+    <ul class="ul_lists_a" >
+    <li class="nav_li"><a class="nav_link" href="{% url "homepage" %}">🏠homepage</a></li>
+    <li class=" nav_li"><a class="nav_link" href="{% url "callus" %}">📱call us</a></li>
+    <li class=" nav_li"><a  class="nav_link" href="{% url "aboutus" %}">👓about us</a></li>
+    </ul>
+</div>

@@ -1,0 +1,47 @@
+    .container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 50px;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+}
+
+label {
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.inputs[type="text"],
+.inputs[type="email"],
+textarea {
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.inputs[type="submit"] {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 15px;
+	margin-top: 20px;
+	cursor: pointer;
+
+}
+
+.inputs[type="submit"]:hover {
+	background-color: #0069d9;
+}
+
+.make-phone-call{margin-left: 35%;
+}

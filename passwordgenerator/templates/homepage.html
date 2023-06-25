@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block static %}
+    <link rel="stylesheet" href="{% static "homepage.css" %}">
+{% endblock %}
+{% block title %}
+password generator
+{% endblock %}
+
+{% block content %}
+
+
+
+
+    <div  class="password-generator">
+    <div class="form-style" >
+        <form method="post" class="p-g-form" action="{% url "homepage" %}">
+            {% csrf_token %}
+                        {{ form }}
+{#                <label for="password-range">select the value</label>#}
+{#                    <input name="passwordrange" value="7"  class="my-range" type="range" min="0" max="15" oninput="this.nextElementSibling.value = this.value"  >#}
+{#                    <output>15</output>#}
+{#                        <input class="submit" type="submit" value="Submit">#}
+
+                     <p class="show-the-number" >Value: <span id="demo"></span></p>
+
+{#                                    result of password is here#}
+
+
+                                       <script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+            <button class="generate-pass-bt" type="submit" >generate</button>
+        </form>
+        </div>
+     <div class="wh-pass" >
+         <h3>your password is : </h3>
+         <pre id="textToCopy" class="pre-pass" >{{ password   }}</pre>
+         <button onclick="copyText()">Copy password</button>
+    	<script>
+		function copyText() {
+			var copyText = document.getElementById("textToCopy");
+			var range = document.createRange();
+			range.selectNode(copyText);
+			window.getSelection().removeAllRanges();
+			window.getSelection().addRange(range);
+			document.execCommand("copy");
+			alert("Copied the text: " + copyText.textContent);
+		}
+	</script>
+
+
+     </div>
+    </div>
+
+
+    
+    
+    
+    
+    
+{% endblock %}
